@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <style>
+    /* Embed Love Pink Black Font */
+    @font-face {
+      font-family: 'LovePinkBlack';
+      src: url('LovePinkBlack.woff2') format('woff2'),
+           url('LovePinkBlack.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial, sans-serif';
+      text-align: center;
+      background: linear-gradient(to bottom right, #ffafbd, #ffc3a0);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      color: #D72638; /* Charming Red */
+      font-family: 'LovePinkBlack', cursive; /* Custom font for h1 */
+    }
+
+    p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      line-height: 1.8;
+      text-shadow: none; /* No shadow for a cleaner look */
+      color: #000; /* Black */
+      font-family: 'Georgia', serif; /* Elegant font for p */
+      font-style: italic; /* Italicized text */
+    }
+
+    .heart {
+      color: red;
+      font-size: 2rem;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 1rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+      color: #D72638; /* Charming Red */
+    }
+
+    /* Sprinkle (Confetti/Hearts) Styles */
+    .sprinkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: pink;
+      border-radius: 50%;
+      animation: fall 5s linear infinite;
+    }
+
+    .sprinkle:nth-child(odd) {
+      background: lightblue;
+    }
+
+    .sprinkle:nth-child(even) {
+      background: lightyellow;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    .play-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      background: #D72638; /* Charming Red */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .play-button:hover {
+      background: #b01e2c; /* Darker red on hover */
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday, My Love! 🎉</h1>
+  <p>
+    Wishing you a day filled with laughter, joy, and all the love in the world.  
+    You light up my life in the most magical way, and today, it's all about celebrating YOU! 
+
+May Allah bless you with a year filled with happiness, health, and prosperity. 
+May your faith grow stronger and your heart be filled with peace.
+ May you continue to be a source of light and love in my life. Ameen!	
+ 
+ (أتمنى لك يومًا مليئًا بالضحك والفرح وكل الحب في العالم. 
+أنت تنير حياتي بأكثر الطرق سحرًا، واليوم، كل شيء يدور حول الاحتفال بك! بارك الله فيك بعام مليء بالسعادة والصحة والازدهار.
+ أتمنى أن ينمو إيمانك ويمتلئ قلبك بالسلام. أتمنى أن تظل مصدرًا للنور والحب في حياتي. آمين!)
+ 
+    <span class="heart">❤️</span>
+  </p>
+
+  <!-- Play Music Button -->
+  <button class="play-button" onclick="playMusic()">🎶 Click me 🎶</button>
+
+  <footer>
+    With all my heart, Nahid
+  </footer>
+
+  <!-- Sprinkle Script -->
+  <script>
+    // Sprinkle Animation
+    const sprinkleCount = 100; // Number of sprinkles
+    for (let i = 0; i < sprinkleCount; i++) {
+      const sprinkle = document.createElement("div");
+      sprinkle.className = "sprinkle";
+      sprinkle.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+      sprinkle.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random fall speed
+      sprinkle.style.opacity = Math.random(); // Random opacity
+      document.body.appendChild(sprinkle);
+    }
+
+    // Play Music Script
+    let audio = new Audio('brithdaysong.mp3'); // Replace with your audio file
+    function playMusic() {
+      audio.play();
+      audio.loop = true; // Loop the audio
+    }
+  </script>
+</body>
+</html>
